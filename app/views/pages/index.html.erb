@@ -1,0 +1,14 @@
+<h1>Pages</h1>
+
+<% if @pages.any? %>
+  <% @pages.each do |page| %>
+    <h3>
+      <%= page.title %>
+    </h3>
+  <% end %>
+<% else %>
+  <h4>No Pages, Please Create One!</h4>
+<% end %>
+
+<!-- <a href='/pages/new'>New Blog Post</a> -->
+<%= link_to 'New Blog Post', new_page_path %>
