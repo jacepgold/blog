@@ -1,2 +1,23 @@
-<h1>Pages#edit</h1>
-<p>Find me in app/views/pages/edit.html.erb</p>
+<h1>
+  Editing: <%= @page.title %>  
+</h1>
+
+<hr />
+
+<%= form_for @page do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title, required: true, placeholder: 'Blog Title' %>
+  <br />
+  <%= f.label :author %>
+  <%= f.text_field :author, required: true, placeholder: 'Blog Author' %>
+  <br />
+  <%= f.label :content %>
+  <%= f.text_area :content, required: true, placeholder: 'Blog Content' %>
+  <br />
+  <%= f.label :public %>
+  <%= f.check_box :public %>
+  <br />
+  <%= f.submit %>
+<% end %>
+
+<%= link_to 'Cancel', page_path(@page) %>
